@@ -1,6 +1,40 @@
-Checks the server health status of a list of ips and domains and notify your email with the list of servers with bad status together with the time it occured
+A bash script that checks the server health status of a list of ips and domains and notify your email with the list of servers with bad status together with the time it occured
+
 
 HOW TO USE:
+
+install ssmtp on your linuxbox you may use sudo apt-get install ssmtp
+reconfigure this file at /etc/ssmtp/ssmtp.conf
+it should look like this:
+
+#
+# Config file for sSMTP sendmail
+#
+# The person who gets all mail for userids < 1000
+# Make this empty to disable rewriting.
+root=empty
+
+# The place where the mail goes. The actual machine name is required no 
+# MX records are consulted. Commonly mailhosts are named mail.domain.com
+mailhub=smtp.gmail.com:587
+
+AuthUser=username@gmail.com  # change this with your gmail username
+AuthPass=********  # change this with your email password
+UseTLS=YES
+UseSTARTTLS=YES
+
+# Where will the mail seem to come from?
+#rewriteDomain=gmail.com
+
+# The full hostname
+hostname=username@gmail.com  # same gmail
+
+# Are users allowed to set their own From: address?
+# YES - Allow the user to specify their own From: address
+# NO - Use the system generated From: address
+FromLineOverride=YES
+
+
 
 run the healthchecker.sh
 add the servers you want to check at servers.list
