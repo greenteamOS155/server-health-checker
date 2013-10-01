@@ -1,3 +1,5 @@
+OS155 project:
+
 A bash script that checks the server health status of a list of ips and domains and notify your email with the list of servers with bad status together with the time it occured
 
 
@@ -36,9 +38,15 @@ FromLineOverride=YES
 
 
 
-run the healthchecker.sh
+open the healthchecker.sh
+change the content of EMAIL variable with your gmail that you used in ssmtp.conf
+
 add the servers you want to check at servers.list
 
+
+run healthchecker.sh at linux terminal
+login your gmail
+check for the notification
 
 NOTE:
 notify.tmp contains the format of mail to be sent together with some configurations
